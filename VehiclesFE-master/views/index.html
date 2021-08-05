@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="../models/car.js"></script>
+        <script src="../models/wheel.js"></script>
+        <script src="../controllers/controller.js"></script>
+    </head>
+
+    <body class="d-flex flex-column justify-content-center bg-info">
+
+            <div id="contenedor" class="container-fluid d-flex flex-column justify-content-start align-items-center">
+
+                    <div class="flex-row w-100 h-100 d-flex justify-content-around mt-5">
+        
+                    <!------- Entrada COTXES-------->
+                        <div class="col-md-4 mt-5" id="divCar">
+        
+                                <!--Card-->
+                                <div class="card rounded-lg">
+        
+                                    <h3 class="card-header bg-light">Add a car</h3>
+        
+                                    <div class="card-body">
+        
+                                        <!--Form-->
+                                        <form id="formulariCar">
+        
+                                            <div class="form-group my-5">
+                                                <input type="text" class="form-control form-control-lg rounded-pill bg-light" placeholder="Plate" id="matricula" autofocus>
+                                                <div id="error" class="text-danger position-absolute pl-3"></div>
+                                            </div>
+
+        
+                                            <div class="form-group my-5">
+                                                <input type="text" class="form-control form-control-lg rounded-pill bg-light" placeholder="Brand" id="marca">
+                                            </div>
+        
+                                            <div class="form-group my-5">
+                                                <input type="text" class="form-control form-control-lg rounded-pill mt-4 mb-5 bg-light" placeholder="Color" id="color">
+                                            </div>
+        
+                                            <button type="reset" onclick="cotxe()" class="btn btn-lg btn-primary btn-block rounded-pill my-4" id="save" type="reset">Create a car</button>
+        
+                                        </form>
+                                        <!--End Form-->
+        
+                                    </div>
+        
+                                </div>
+                                <!--End Card-->
+                        </div>
+                    <!------End Entrada COTXES-------->
+
+                     <!------- Entrada RODES-------->
+                    <div class="col-md-4 mt-5" id="divRodes" style="display: none">
+
+                        <!--Card-->
+                        <div class="card rounded-lg">
+
+                            <h3 class="card-header bg-light">Add wheels</h3>
+
+                            <div class="card-body">
+
+                                <!--Form-->
+                                <form id="formulariRoda">
+
+                                    <div class="row mt-5">
+                                        <div class="col">
+                                            <input type="number" class="form-control form-control-lg rounded-pill bg-light" placeholder="Diamenter 1" id="D1">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-control-lg rounded-pill bg-light" placeholder="Wheel 1 Brand" id="W1B">
+                                        </div>
+                                    </div>
+                                    <div id="eD1" class="text-danger position-absolute"></div>
+
+                                    <div class="row mt-5">
+                                        <div class="col">
+                                            <input type="number" class="form-control form-control-lg rounded-pill bg-light" placeholder="Diamenter 2" id="D2">
+                                        </div>
+
+                                        <div class="col">
+                                            <input type="text" class="form-control form-control-lg rounded-pill bg-light" placeholder="Wheel 2 Brand" id="W2B">
+                                        </div>
+                                    </div>
+
+                                    <div id="eD2" class="text-danger"></div>
+
+                                    <div class="row mt-5">
+                                        <div class="col">
+                                            <input type="number" class="form-control form-control-lg rounded-pill bg-light" placeholder="Diamenter 3" id="D3">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-control-lg rounded-pill bg-light" placeholder="Wheel 3 Brand" id="W3B">
+                                        </div>
+                                    </div>
+
+                                    <div id="eD3" class="text-danger position-absolute"></div>
+
+                                    <div class="row mt-5">
+                                        <div class="col">
+                                            <input type="number" class="form-control form-control-lg rounded-pill bg-light" placeholder="Diamenter 4" id="D4">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control form-control-lg rounded-pill bg-light" placeholder="Wheel 4 Brand" id="W4B">
+                                        </div>
+                                    </div>
+
+                                    <div id="eD4" class="text-danger position-absolute"></div>
+
+                                    <button onclick="rodes();createCar()"class="btn btn-lg btn-primary btn-block rounded-pill my-4 mt-5" id="save" type="reset">Add Wheels</button>
+
+                                </form>
+                                <!--End Form-->
+
+                            </div>
+
+                        </div>
+                        <!--End Card-->
+                </div>
+            <!-----End Entrada RODES--------> 
+        
+                        <!--Salida productos-->
+                        <div class="col-md-7 mt-5">
+        
+                                <table class="table table-striped table-bordered table-dark" id= "tabla"></table>
+        
+                        </div>
+                        <!--End Salida productos-->
+        
+                    </div>
+
+    </body>
+
+</html>
